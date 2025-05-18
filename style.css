@@ -72,6 +72,9 @@
   scroll-snap-align: center;
   flex: none;
   width: 84%;
+  /* height: 130px; */
+  height: auto;
+  min-height: 130px;
   height: 130px;
   display: flex;
   align-items: center;
@@ -82,6 +85,7 @@
   background: rgb(255, 255, 255);
   box-shadow: 0 0 10px white, inset 0 0 10px rgba(0, 0, 0, 0.5), 0 0 10px black;
   border-radius: 10px;
+  flex-shrink: 0;
 }
 #slider p:first-child {
   margin-left: 8%;
@@ -318,5 +322,18 @@ form button {
   100% {
     opacity: 0;
     transform: translateY(110vh) scale(1);
+  }
+}
+
+@media (max-width: 480px) {
+  #slider p {
+    width: 90vw;  /* use viewport width instead of % */
+    margin: 10px 5vw; /* reduce margin to fit better */
+  }
+  #slider p:first-child {
+    margin-left: 5vw;
+  }
+  #slider p:last-child {
+    margin-right: 5vw;
   }
 }
