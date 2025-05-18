@@ -11,12 +11,12 @@ if (window.location.hash) {
 
 document.querySelector(".bg").style = 'background-image: url("' + background + '")';
 
-var open = document.querySelector(".open");
+var opening = document.querySelector(".opening");
 function ilang() {
     audio.play();
-    open.style = "transition: 1.5s ease-out all; opacity: 0; transform: scale(100) translateY(-20px); filter: brightness(0);";
+    opening.style = "transition: 1.5s ease-out all; opacity: 0; transform: scale(100) translateY(-20px); filter: brightness(0);";
     setTimeout(function () {
-        open.style = "display:none;";
+        opening.style = "display:none;";
     }, 1500);
 }
 
@@ -38,8 +38,6 @@ function makan() {
 }
 
 var allBtn = document.querySelector(".button").children;
-
-console.log(allBtn);
 
 var btnPrev = allBtn[0].children[0];
 var btnNext = allBtn[0].children[1];
@@ -243,6 +241,4 @@ function changeUcapan(u1, u2) {
 }
 
 // ========
-console.log(window.location.origin + window.location.pathname);
-
 document.querySelector("form").setAttribute("action", "index.php" + "?link=" + window.location.origin + window.location.pathname);

@@ -229,7 +229,7 @@ form button {
   }
 }
 
-.open {
+.opening {
   position: fixed;
   z-index: 10;
   top: 0;
@@ -243,13 +243,13 @@ form button {
   background-color: black;
   background-size: cover;
 }
-.open div {
+.opening div {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-.open div.lope {
+.opening div.lope {
   height: 70px;
   width: 70px;
   margin: 20px 0;
@@ -269,12 +269,12 @@ form button {
   box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2);
 }
 
-.open i {
+.opening i {
   font-size: 2.3em;
   color: red;
 }
 
-.open h3 {
+.opening h3 {
   font-weight: 500;
   color: white;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
