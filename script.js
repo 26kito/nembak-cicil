@@ -37,40 +37,48 @@ function makan() {
     }
 }
 
-var allBtn = document.querySelector(".button").children;
+var btnPrev = document.querySelector(".back-slider-btn");
+var btnNext = document.querySelector(".next-slider-btn");
 
-var btnPrev = allBtn[0].children[0];
-var btnNext = allBtn[0].children[1];
+// btnPrev.setAttribute("onclick", "prev()");
+// btnNext.setAttribute("onclick", "next()");
 
-btnPrev.setAttribute("onclick", "prev()");
-btnNext.setAttribute("onclick", "next()");
+btnPrev.addEventListener("click", prev);
+btnNext.addEventListener("click", next);
 
-var btnGamau = allBtn[1].children[0];
-var btnMau = allBtn[1].children[1];
+var btnGamau = document.querySelector(".btn-gamau");
+var btnMau = document.querySelector(".btn-mau");
 var vGamau = btnGamau.textContent;
 var vMau = btnMau.textContent;
-btnGamau.setAttribute("onclick", "gamau(this)");
-btnMau.setAttribute("onclick", "mau()");
-var btnPesan = allBtn[2].children[0];
-btnPesan.setAttribute("onclick", "modalPesan()");
+
+// btnGamau.setAttribute("onclick", "gamau(this)");
+// btnMau.setAttribute("onclick", "mau()");
+
+btnGamau.addEventListener("click", gamau);
+btnMau.addEventListener("click", mau);
+
+var btnPesan = document.querySelector(".button").children[2].children[0];
+// btnPesan.setAttribute("onclick", "modalPesan()");
+
+btnPesan.addEventListener("click", modalPesan);
 
 var ucapanz = document.querySelector(".ucapan");
-var ucapan1 = document.querySelectorAll("#slider")[0];
-var ucapan2 = document.querySelectorAll("#slider")[1];
+var ucapan1 = document.querySelector("#slider");
+var ucapan2 = document.querySelector("#slider-on-accept");
 
 var ucapan = document.querySelector("#slider").children;
 
 var btn = document.querySelector(".button");
-var btn1 = allBtn[0];
-var btn2 = allBtn[1];
-var btn3 = allBtn[2];
+var btn1 = document.querySelector(".button").children[0];
+var btn2 = document.querySelector(".button").children[1];
+var btn3 = document.querySelector(".button").children[2];
 
 var jawaban = document.querySelector(".jawaban");
 
 btn2.style.display = "none";
 btn3.style.display = "none";
 
-var now = 0;
+var now = 0; // slider position
 
 for (j = 0; j < ucapan.length; j++) {
     ucapan[j].setAttribute("id", j);
@@ -115,7 +123,7 @@ function prev() {
     }
     disBtn();
 }
-ucapan2.style = "display: none;";
+ucapan2.style.display = "none";
 
 function slider() {
     now++;
@@ -130,7 +138,7 @@ function slider() {
 //   gamau
 var pesan = "";
 var xgamau = 1;
-function gamau(thi) {
+function gamau(event) {
     pesan += "ditolak, ";
 
     if (xgamau == 1) {
@@ -162,7 +170,7 @@ function gamau(thi) {
 
     xgamau++;
 
-    thi.style = "transform: translateY(" + y + "px) translateX(" + x + "px)";
+    event.target.style = "transform: translateY(" + y + "px) translateX(" + x + "px)";
 }
 
 // Mau

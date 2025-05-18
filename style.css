@@ -48,7 +48,7 @@
 
 /* =========== */
 
-#slider {
+#slider, #slider-on-accept {
   display: flex;
   overflow: hidden;
   /* overflow-y: hidden; */
@@ -62,10 +62,11 @@
   scrollbar-width: none;
   scroll-behavior: smooth;
 }
-#slider::-webkit-scrollbar {
+#slider::-webkit-scrollbar,
+#slider-on-accept::-webkit-scrollbar {
   display: none;
 }
-#slider p {
+#slider p, #slider-on-accept p {
   font-size: 1.2em;
   font-weight: 500;
   text-align: center;
@@ -87,10 +88,12 @@
   border-radius: 10px;
   flex-shrink: 0;
 }
-#slider p:first-child {
+#slider p:first-child,
+#slider-on-accept p:first-child {
   margin-left: 8%;
 }
-#slider p:last-child {
+#slider p:last-child,
+#slider-on-accept p:last-child {
   margin-right: 8%;
 }
 
