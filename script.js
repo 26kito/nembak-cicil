@@ -1,7 +1,7 @@
 $(window).on("load", function () {
     $(".preload").fadeOut("slow");
 });
-var audio = new Audio(musik);
+let audio = new Audio(musik);
 audio.autoplay = true;
 audio.loop = true;
 
@@ -11,12 +11,13 @@ if (window.location.hash) {
 
 document.querySelector(".bg").style = 'background-image: url("' + background + '")';
 
-var opening = document.querySelector(".opening");
+let opening = document.querySelector(".opening");
+
 function ilang() {
     audio.play();
     opening.style = "transition: 1.5s ease-out all; opacity: 0; transform: scale(100) translateY(-20px); filter: brightness(0);";
     setTimeout(function () {
-        opening.style = "display:none;";
+        opening.style.display = "none";
     }, 1500);
 }
 
@@ -37,8 +38,8 @@ function makan() {
     }
 }
 
-var btnPrev = document.querySelector(".back-slider-btn");
-var btnNext = document.querySelector(".next-slider-btn");
+let btnPrev = document.querySelector(".back-slider-btn");
+let btnNext = document.querySelector(".next-slider-btn");
 
 // btnPrev.setAttribute("onclick", "prev()");
 // btnNext.setAttribute("onclick", "next()");
@@ -46,10 +47,10 @@ var btnNext = document.querySelector(".next-slider-btn");
 btnPrev.addEventListener("click", prev);
 btnNext.addEventListener("click", next);
 
-var btnGamau = document.querySelector(".btn-gamau");
-var btnMau = document.querySelector(".btn-mau");
-var vGamau = btnGamau.textContent;
-var vMau = btnMau.textContent;
+let btnGamau = document.querySelector(".btn-gamau");
+let btnMau = document.querySelector(".btn-mau");
+let vGamau = btnGamau.textContent;
+let vMau = btnMau.textContent;
 
 // btnGamau.setAttribute("onclick", "gamau(this)");
 // btnMau.setAttribute("onclick", "mau()");
@@ -57,28 +58,28 @@ var vMau = btnMau.textContent;
 btnGamau.addEventListener("click", gamau);
 btnMau.addEventListener("click", mau);
 
-var btnPesan = document.querySelector(".button").children[2].children[0];
+let btnPesan = document.querySelector(".button").children[2].children[0];
 // btnPesan.setAttribute("onclick", "modalPesan()");
 
 btnPesan.addEventListener("click", modalPesan);
 
-var ucapanz = document.querySelector(".ucapan");
-var ucapan1 = document.querySelector("#slider");
-var ucapan2 = document.querySelector("#slider-on-accept");
+let ucapanz = document.querySelector(".ucapan");
+let ucapan1 = document.querySelector("#slider");
+let ucapan2 = document.querySelector("#slider-on-accept");
 
-var ucapan = document.querySelector("#slider").children;
+let ucapan = document.querySelector("#slider").children;
 
-var btn = document.querySelector(".button");
-var btn1 = document.querySelector(".button").children[0];
-var btn2 = document.querySelector(".button").children[1];
-var btn3 = document.querySelector(".button").children[2];
+let btn = document.querySelector(".button");
+let btn1 = document.querySelector(".button").children[0];
+let btn2 = document.querySelector(".button").children[1];
+let btn3 = document.querySelector(".button").children[2];
 
-var jawaban = document.querySelector(".jawaban");
+let jawaban = document.querySelector(".jawaban");
 
 btn2.style.display = "none";
 btn3.style.display = "none";
 
-var now = 0; // slider position
+let now = 0; // slider position
 
 for (j = 0; j < ucapan.length; j++) {
     ucapan[j].setAttribute("id", j);
@@ -136,8 +137,8 @@ function slider() {
 }
 
 //   gamau
-var pesan = "";
-var xgamau = 1;
+let pesan = "";
+let xgamau = 1;
 function gamau(event) {
     pesan += "ditolak, ";
 
@@ -198,10 +199,10 @@ function changeBtn(b1, b2) {
 // =============
 // STIKER
 
-var stiker = document.querySelector(".stiker");
-var stiker1 = document.querySelector(".stiker").children[0];
-var stiker2 = document.querySelector(".stiker").children[1];
-var stiker3 = document.querySelector(".stiker").children[2];
+let stiker = document.querySelector(".stiker");
+let stiker1 = document.querySelector(".stiker").children[0];
+let stiker2 = document.querySelector(".stiker").children[1];
+let stiker3 = document.querySelector(".stiker").children[2];
 
 stiker1.src = gambarStiker1;
 stiker2.src = gambarStiker2;
@@ -224,8 +225,8 @@ function changeStiker(s1, s2) {
 // ======================
 // PESAN
 function modalPesan() {
-    var modalPesann = document.querySelector(".container-pesan");
-    var cardPesan = document.querySelector(".kirim-pesan");
+    let modalPesann = document.querySelector(".container-pesan");
+    let cardPesan = document.querySelector(".kirim-pesan");
 
     modalPesann.style = "display: flex;";
 
