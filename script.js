@@ -1,6 +1,13 @@
 $(window).on("load", function () {
     $(".preload").fadeOut("slow");
 });
+
+let musik = "ily.mp3";
+let background = "background.jpeg";
+let gambarStiker1 = "FileStiker1.gif";
+let gambarStiker2 = "FileStiker2.gif";
+let gambarStiker3 = "FileStiker3.gif";
+
 let audio = new Audio(musik);
 audio.autoplay = true;
 audio.loop = true;
