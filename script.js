@@ -23,16 +23,16 @@ function ilang() {
 
 // Lope
 function buatLope() {
-    w = window.innerWidth;
-    for (i = 0; i < w / 40; i++) {
+    let w = window.innerWidth;
+    for (let i = 0; i < w / 40; i++) {
         const para = document.createElement("span");
         const element = document.querySelector(".lopeBg");
         element.appendChild(para);
     }
 }
 function makan() {
-    titik = document.querySelectorAll("span");
-    for (i = 0; i < titik.length; i++) {
+    let titik = document.querySelectorAll("span");
+    for (let i = 0; i < titik.length; i++) {
         titik[i].innerHTML = '<i class="love material-icons-sharp"> favorite </i>';
         titik[i].style = "animation-duration:" + 40 / (Math.random() * (20 - 10) + 10) + "s; animation-delay:" + (Math.random() * 3 + 0) + "s;";
     }
@@ -81,7 +81,7 @@ btn3.style.display = "none";
 
 let now = 0; // slider position
 
-for (j = 0; j < ucapan.length; j++) {
+for (let j = 0; j < ucapan.length; j++) {
     ucapan[j].setAttribute("id", j);
 }
 
@@ -98,7 +98,7 @@ function disBtn() {
         buatLope();
         makan();
 
-        for (j = 0; j < ucapan.length; j++) {
+        for (let j = 0; j < ucapan.length; j++) {
             if (j != ucapan.length - 1) {
                 ucapan[j].style = "transition: 0.3s ease-out; opacity: 0;";
             }
@@ -141,6 +141,9 @@ let pesan = "";
 let xgamau = 1;
 function gamau(event) {
     pesan += "ditolak, ";
+
+    let x = 100;
+    let y = -180;
 
     if (xgamau == 1) {
         x = 100;
